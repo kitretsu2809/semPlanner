@@ -1,0 +1,207 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:2306136589620187981",
+      "lastPropertyId": "5:3430987033585828683",
+      "name": "ChatMessage",
+      "properties": [
+        {
+          "id": "1:7602016793102217156",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2822196715898819305",
+          "name": "courseId",
+          "type": 9
+        },
+        {
+          "id": "3:8903984567527607259",
+          "name": "text",
+          "type": 9
+        },
+        {
+          "id": "4:6265075718109097684",
+          "name": "isAi",
+          "type": 1
+        },
+        {
+          "id": "5:3430987033585828683",
+          "name": "timestamp",
+          "type": 10
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:8788154451621685830",
+      "lastPropertyId": "7:5600837441044609755",
+      "name": "Course",
+      "properties": [
+        {
+          "id": "1:3664565299404871682",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:790118002500215455",
+          "name": "courseId",
+          "indexId": "1:8009083906631857123",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:811943427154423644",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "4:9197758578622078218",
+          "name": "instructor",
+          "type": 9
+        },
+        {
+          "id": "5:5380601429053719767",
+          "name": "scheduleInfo",
+          "type": 9
+        },
+        {
+          "id": "6:2260637861381316690",
+          "name": "progressSummary",
+          "type": 9
+        },
+        {
+          "id": "7:5600837441044609755",
+          "name": "progressPercentage",
+          "type": 8
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:1380465176936227641",
+      "lastPropertyId": "5:1217631882742256681",
+      "name": "DocumentChunk",
+      "properties": [
+        {
+          "id": "1:9102544818824723338",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6702694441948999032",
+          "name": "text",
+          "type": 9
+        },
+        {
+          "id": "3:7853137118245848892",
+          "name": "sourceDocument",
+          "type": 9
+        },
+        {
+          "id": "4:7837475067166384856",
+          "name": "courseId",
+          "type": 9
+        },
+        {
+          "id": "5:1217631882742256681",
+          "name": "embedding",
+          "indexId": "2:7344821137094688134",
+          "type": 28,
+          "flags": 8
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:6282085342872737270",
+      "lastPropertyId": "7:5513746733200426436",
+      "name": "DailyEvent",
+      "properties": [
+        {
+          "id": "1:171843672486882770",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:7685175562242012278",
+          "name": "dayOfWeek",
+          "type": 9
+        },
+        {
+          "id": "3:8549675663593421478",
+          "name": "startTime",
+          "type": 9
+        },
+        {
+          "id": "4:1066275384307232071",
+          "name": "endTime",
+          "type": 9
+        },
+        {
+          "id": "5:4032832107243309239",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "6:5565052443035221544",
+          "name": "subtitle",
+          "type": 9
+        },
+        {
+          "id": "7:5513746733200426436",
+          "name": "category",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:4402355604015663157",
+      "lastPropertyId": "4:309848054837852108",
+      "name": "Goal",
+      "properties": [
+        {
+          "id": "1:9120528924906030482",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8642932110332666181",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "3:3454100417036715196",
+          "name": "progress",
+          "type": 8
+        },
+        {
+          "id": "4:309848054837852108",
+          "name": "statusText",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "5:4402355604015663157",
+  "lastIndexId": "2:7344821137094688134",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
