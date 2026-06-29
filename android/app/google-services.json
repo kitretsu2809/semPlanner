@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "479387752298",
+    "project_id": "semplanner2810",
+    "storage_bucket": "semplanner2810.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479387752298:android:0fe9715d4a9022b1e57713",
+        "android_client_info": {
+          "package_name": "com.student.semplanner.semplanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiq4P5sOUsEv9a_RAxjAiWwjPK5ToEhJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
