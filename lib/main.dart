@@ -7,7 +7,6 @@ import 'package:semplanner/core/router.dart';
 import 'package:semplanner/core/db/objectbox_db.dart';
 import 'package:semplanner/core/providers/app_providers.dart';
 import 'package:semplanner/core/services/notification_service.dart';
-import 'package:semplanner/core/services/ad_service.dart';
 import 'package:semplanner/core/services/update_check_service.dart';
 
 void main() async {
@@ -16,9 +15,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
-  // Initialize AdMob
-  await AdService.instance.init();
 
   await NotificationService().init();
 
@@ -47,7 +43,7 @@ class SemPlannerApp extends StatelessWidget {
       builder: (context, child) {
         // Run force-update check once after first frame
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          // UpdateCheckService.instance.checkAndEnforceUpdate();
+          UpdateCheckService.instance.checkAndEnforceUpdate();
         });
         return child ?? const SizedBox.shrink();
       },

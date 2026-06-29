@@ -336,6 +336,33 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with WidgetsB
           const SizedBox(width: 8),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        selectedItemColor: AppTheme.primaryBlue,
+        unselectedItemColor: AppTheme.textLight,
+        showUnselectedLabels: true,
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          if (index == 1) context.push('/onboarding/intake');
+          if (index == 2) context.go('/hub');
+          if (index == 3) context.go('/roadmap');
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard),
+            label: 'Dashboard',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_circle_outline),
+            label: 'Intake',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.hub_outlined), label: 'Hub'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.route_outlined),
+            label: 'Roadmap',
+          ),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.all(24.0),
         children: [
@@ -361,6 +388,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with WidgetsB
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
+
               border: Border.all(color: Colors.grey.shade200),
               boxShadow: [
                 BoxShadow(
@@ -666,33 +694,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> with WidgetsB
           ),
           
           const SizedBox(height: 32),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        selectedItemColor: AppTheme.primaryBlue,
-        unselectedItemColor: AppTheme.textLight,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        onTap: (index) {
-          if (index == 1) context.push('/onboarding/intake');
-          if (index == 2) context.go('/hub');
-          if (index == 3) context.go('/roadmap');
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle_outline),
-            label: 'Intake',
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.hub_outlined), label: 'Hub'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.route_outlined),
-            label: 'Roadmap',
-          ),
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(

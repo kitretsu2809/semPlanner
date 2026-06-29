@@ -17,6 +17,7 @@ class AiHubScreen extends ConsumerStatefulWidget {
 
 class _AiHubScreenState extends ConsumerState<AiHubScreen> {
   List<Course> _courses = [];
+  bool _isLoading = true;
 
   @override
   void initState() {
@@ -24,10 +25,16 @@ class _AiHubScreenState extends ConsumerState<AiHubScreen> {
     _loadCourses();
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   void _loadCourses() {
     final db = ref.read(objectBoxProvider);
     setState(() {
       _courses = db.store.box<Course>().getAll();
+      _isLoading = false;
     });
   }
 
@@ -86,6 +93,8 @@ class _AiHubScreenState extends ConsumerState<AiHubScreen> {
           if (_courses.isEmpty)
             const Text('No documents uploaded yet. Go to Intake to upload syllabi.', style: TextStyle(color: AppTheme.textLight)),
             
+
+
           Padding(
             padding: const EdgeInsets.only(bottom: 12.0),
             child: _buildHubCard(
