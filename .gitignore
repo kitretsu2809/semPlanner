@@ -47,3 +47,7 @@ key.properties
 *.jks
 
 /SCREENSHOTS
+INSTAGRAM_ADS/
+commit_history.sh
+make_ads.py
+lib/firebase_options.dart
