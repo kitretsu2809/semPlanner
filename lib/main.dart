@@ -47,7 +47,7 @@ class SemPlannerApp extends StatelessWidget {
       builder: (context, child) {
         // Run force-update check once after first frame
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          UpdateCheckService.instance.checkAndEnforceUpdate();
+          // UpdateCheckService.instance.checkAndEnforceUpdate();
         });
         return child ?? const SizedBox.shrink();
       },
