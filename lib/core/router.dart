@@ -11,7 +11,12 @@ import 'package:semplanner/features/roadmap/roadmap_screen.dart';
 import 'package:semplanner/features/profile/profile_screen.dart';
 import 'package:semplanner/features/dashboard/weekly_schedule_screen.dart';
 
+import 'package:flutter/material.dart';
+
+final rootNavigatorKey = GlobalKey<NavigatorState>();
+
 final goRouter = GoRouter(
+  navigatorKey: rootNavigatorKey,
   initialLocation: '/login', // Force login screen first while developing
   routes: [
     GoRoute(
