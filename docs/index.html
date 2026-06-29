@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>semPlanner - Your AI Study Companion</title>
+    <meta name="description" content="Upload your messy timetables, syllabi and meal timings. Tell us your semester goal and semPlanner's AI builds the perfect study roadmap for you.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
         <div class="logo-container">
             <img src="icon.png" alt="semPlanner Logo" class="logo">
@@ -18,32 +20,123 @@
         </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
         <h1>Your Goals, Our Schedule.</h1>
-        <p>Whether your goal is to ace your finals or land a Backend Development internship, semPlanner gets you there. Just upload your messy timetables, meal timings, and course syllabi—we'll handle the rest.</p>
-        <a href="semplanner.apk" class="btn" download>Download APK directly</a>
-        <br><br>
-        <p style="font-size: 0.9em; opacity: 0.8;">Get it on Google Play (Coming Soon)</p>
+        <p>Whether your goal is to ace your finals or land a Backend Development internship, semPlanner gets you there. Just upload your messy timetables, meal timings, and course syllabi — we'll handle the rest.</p>
+        <a href="semplanner.apk" class="btn" download>⬇ Download APK &nbsp;<span class="badge">Free Beta</span></a>
+        <p class="coming-soon">Get it on Google Play (Coming Soon)</p>
     </section>
 
-    <section class="screenshots">
-        <img src="images/screen1.jpeg" alt="App Screenshot 1">
-        <img src="images/screen2.jpeg" alt="App Screenshot 2">
-        <img src="images/screen4.jpeg" alt="App Screenshot 3">
+    <!-- AD CAROUSEL -->
+    <section class="section-title">
+        <h2>See How It Works</h2>
+        <p>A quick peek at what semPlanner can do for you</p>
     </section>
 
+    <div class="carousel" id="adCarousel">
+        <button class="carousel-btn prev" onclick="moveCarousel('adCarousel', -1)">&#8249;</button>
+        <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="adCarouselTrack">
+                <div class="carousel-slide ad-slide">
+                    <img src="images/ads/slide_1.png" alt="Ad Slide 1">
+                </div>
+                <div class="carousel-slide ad-slide">
+                    <img src="images/ads/slide_2.png" alt="Ad Slide 2">
+                </div>
+                <div class="carousel-slide ad-slide">
+                    <img src="images/ads/slide_3.png" alt="Ad Slide 3">
+                </div>
+            </div>
+        </div>
+        <button class="carousel-btn next" onclick="moveCarousel('adCarousel', 1)">&#8250;</button>
+        <div class="carousel-dots" id="adCarouselDots">
+            <span class="dot active" onclick="goToSlide('adCarousel', 0)"></span>
+            <span class="dot" onclick="goToSlide('adCarousel', 1)"></span>
+            <span class="dot" onclick="goToSlide('adCarousel', 2)"></span>
+        </div>
+    </div>
+
+    <!-- SCREENSHOT CAROUSEL -->
+    <section class="section-title">
+        <h2>App Screenshots</h2>
+        <p>Real screens from the app</p>
+    </section>
+
+    <div class="carousel" id="ssCarousel">
+        <button class="carousel-btn prev" onclick="moveCarousel('ssCarousel', -1)">&#8249;</button>
+        <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="ssCarouselTrack">
+                <div class="carousel-slide ss-slide"><img src="images/screen1.jpeg" alt="Screenshot 1"></div>
+                <div class="carousel-slide ss-slide"><img src="images/screen2.jpeg" alt="Screenshot 2"></div>
+                <div class="carousel-slide ss-slide"><img src="images/screen3.jpeg" alt="Screenshot 3"></div>
+                <div class="carousel-slide ss-slide"><img src="images/screen4.jpeg" alt="Screenshot 4"></div>
+                <div class="carousel-slide ss-slide"><img src="images/screen5.jpeg" alt="Screenshot 5"></div>
+                <div class="carousel-slide ss-slide"><img src="images/screen6.jpeg" alt="Screenshot 6"></div>
+                <div class="carousel-slide ss-slide"><img src="images/screen7.jpeg" alt="Screenshot 7"></div>
+                <div class="carousel-slide ss-slide"><img src="images/screen8.jpeg" alt="Screenshot 8"></div>
+            </div>
+        </div>
+        <button class="carousel-btn next" onclick="moveCarousel('ssCarousel', 1)">&#8250;</button>
+        <div class="carousel-dots" id="ssCarouselDots">
+            <span class="dot active" onclick="goToSlide('ssCarousel', 0)"></span>
+            <span class="dot" onclick="goToSlide('ssCarousel', 1)"></span>
+            <span class="dot" onclick="goToSlide('ssCarousel', 2)"></span>
+            <span class="dot" onclick="goToSlide('ssCarousel', 3)"></span>
+            <span class="dot" onclick="goToSlide('ssCarousel', 4)"></span>
+            <span class="dot" onclick="goToSlide('ssCarousel', 5)"></span>
+            <span class="dot" onclick="goToSlide('ssCarousel', 6)"></span>
+            <span class="dot" onclick="goToSlide('ssCarousel', 7)"></span>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
     <section class="content-section">
         <h2>Features</h2>
         <ul>
             <li><strong>Intake Anything:</strong> Upload photos of your messy timetables, course syllabi, and even your daily meal timings. Our AI understands it all.</li>
             <li><strong>Goal-Oriented Roadmaps:</strong> Tell us your end goal for the semester (e.g., "I want to land a Backend Internship") and our AI will build a personalized, day-by-step roadmap to get you there.</li>
-            <li><strong>Intelligent Scheduling:</strong> We automatically find the free gaps between your lectures and meals to schedule high-impact study sessions, ensuring you stay on track without burning out.</li>
+            <li><strong>Intelligent Scheduling:</strong> We automatically find the free gaps between your lectures and meals to schedule high-impact study sessions.</li>
             <li><strong>Interactive AI Tutor:</strong> Chat directly with your uploaded documents to clarify concepts or prepare for midterms instantly.</li>
         </ul>
     </section>
 
     <footer>
-        <p>&copy; 2026 semPlanner. All rights reserved.</p>
+        <p>&copy; 2026 semPlanner. All rights reserved. &nbsp;|&nbsp; <a href="privacy.html" style="color: var(--primary-blue)">Privacy Policy</a></p>
     </footer>
+
+    <script>
+        const carouselState = {};
+
+        function initCarousel(id) {
+            carouselState[id] = { current: 0 };
+        }
+
+        function moveCarousel(id, dir) {
+            const track = document.getElementById(id + 'Track');
+            const slides = track.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll(`#${id}Dots .dot`);
+            let state = carouselState[id] || { current: 0 };
+            state.current = (state.current + dir + slides.length) % slides.length;
+            carouselState[id] = state;
+            updateCarousel(id, state.current);
+        }
+
+        function goToSlide(id, index) {
+            carouselState[id] = { current: index };
+            updateCarousel(id, index);
+        }
+
+        function updateCarousel(id, index) {
+            const track = document.getElementById(id + 'Track');
+            track.style.transform = `translateX(-${index * 100}%)`;
+            const dots = document.querySelectorAll(`#${id}Dots .dot`);
+            dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        }
+
+        // Auto-play
+        setInterval(() => moveCarousel('adCarousel', 1), 4000);
+        setInterval(() => moveCarousel('ssCarousel', 1), 3000);
+    </script>
 </body>
 </html>
