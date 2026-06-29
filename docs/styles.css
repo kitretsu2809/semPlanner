@@ -77,6 +77,26 @@ nav a:hover {
   margin: 0 auto 30px;
 }
 
+.screenshots {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: -40px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.screenshots img {
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.screenshots img:hover {
+  transform: translateY(-10px);
+}
+
 .btn {
   display: inline-block;
   padding: 12px 30px;
